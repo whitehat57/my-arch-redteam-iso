@@ -1,0 +1,97 @@
+# archlive/packages.x86_64
+# Base System
+base
+linux
+linux-firmware
+linux-headers # Penting untuk DKMS/driver custom
+systemd
+systemd-sysvcompat # Penting untuk kompatibilitas systemctl
+grub
+efibootmgr # Untuk instalasi UEFI
+
+# Drivers (pastikan ini ada, sesuaikan jika ada hardware spesifik)
+mesa
+xf86-video-intel # Atau xf86-video-amdgpu / nvidia-dkms
+alsa-utils # Atau pipewire, pipewire-alsa, pipewire-pulse
+wireless_tools # Atau iw (iw sudah ada di base)
+networkmanager # Sangat penting untuk koneksi jaringan
+intel-ucode # Untuk CPU Intel, atau amd-ucode untuk AMD
+
+# Hyprland & dependencies
+hyprland
+xdg-desktop-portal-hyprland
+wayland
+wayland-protocols
+wlroots
+libinput
+nvidia-utils # Jika menggunakan GPU Nvidia
+polkit
+polkit-gnome # Atau polkit-kde
+brightnessctl
+pavucontrol
+swaybg
+swaylock
+wofi # Launcher alternatif Hyprland
+# Atau rofi-wayland (perlu build dari AUR)
+wlogout
+grim # Screenshots
+slurp # Screenshots
+foot # Terminal emulator yang ringan
+# Atau kitty, alacritty, wezterm (rekomendasi untuk performa & fitur)
+kitty # Contoh terminal emulator
+font-manager # Mempermudah manajemen font
+ttf-jetbrains-mono # Contoh font monospace favorit
+noto-fonts noto-fonts-cjk noto-fonts-emoji # Font penting
+
+# Utilities & Dev Tools
+git
+vim # Atau neovim
+htop
+neofetch
+base-devel # Penting untuk kompilasi dari AUR
+sudo
+fzf
+ripgrep
+exa
+btop
+gnome-keyring # Untuk manajemen kredensial
+sshfs
+wget
+curl
+unzip
+tar
+rsync
+reflector # Untuk update mirrorlist
+pacman-contrib # Untuk pacman-mirrorlist, pacdiff, dll.
+
+# Red Team Tools (Contoh, sesuaikan dengan kebutuhan lo)
+# Beberapa mungkin perlu dari AUR atau BlackArch repo
+# Pastikan lo tau cara pakainya dan fungsinya
+nmap # Network scanner
+wireshark-qt # Network protocol analyzer (butuh xorg-xwayland)
+metasploit # Framework exploit (seringnya dari AUR/manual install)
+sqlmap # SQL injection tool
+dirbuster # Web path/file brute-forcer
+gobuster # Go-based dir/file/DNS/VHost buster
+burpsuite # Web vulnerability scanner (Community Edition biasanya manual install)
+john # Password cracker
+hashcat # Advanced password recovery utility
+aircrack-ng # Wireless security suite
+ettercap # Man-in-the-middle attacks
+impacket # Collection of Python classes for working with network protocols
+responder # LLMNR, NBT-NS and MDNS poisoner
+pwndbg # GDB plugin for exploit development and reverse engineering
+ghidra # Reverse engineering framework (manual install)
+radare2 # Reverse engineering framework
+gdb
+binwalk # Firmware analysis tool
+steghide # Steganography tool
+# Browser yang siap untuk pentesting
+firefox # Atau brave/chromium
+# Extension browser seperti FoxyProxy, HackBar, Wappalyzer
+
+# Optional: Virtualisasi (jika ingin pakai VM di dalam VM)
+qemu-full # Atau virt-manager
+
+# Penting: xorg-xwayland diperlukan untuk aplikasi Xorg di Wayland
+xorg-xwayland
